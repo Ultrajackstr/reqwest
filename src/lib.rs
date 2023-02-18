@@ -331,8 +331,6 @@ if_hyper! {
     #[cfg(feature = "blocking")]
     pub mod blocking;
     mod connect;
-    #[cfg(feature = "cookies")]
-    pub mod cookie;
     pub mod dns;
     mod proxy;
     pub mod redirect;
@@ -340,6 +338,9 @@ if_hyper! {
     pub mod tls;
     mod util;
 }
+
+#[cfg(feature = "cookies")]
+pub mod cookie;
 
 if_wasm! {
     mod wasm;
